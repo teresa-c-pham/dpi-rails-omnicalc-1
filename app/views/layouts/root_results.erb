@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <% input = params.fetch("number")
+    sq_root = input.to_f**0.5 %>
+    <h1>Square Root Results</h1>
+    <p>Number<br>
+      <%= input%></p>
+      <p>Square Root<br>
+      <%= sq_root %>
+    </p>
+    <p><a href="/square_root/new">Calculate another square root</a><p>
+  </body>
+</html>

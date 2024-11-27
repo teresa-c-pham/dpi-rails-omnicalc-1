@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <% apr = params.fetch("apr_rate").to_f
+    years = params.fetch("year").to_i
+    principal = params.fetch("start").to_f
+    payment = (apr / 100 / 12) * principal / (1 - (1 + (apr / 100 / 12))**(-1 * 12 * years)) %>
+  
+    <h1>Payment Results</h1>
+    <p>APR<br>
+      <%= apr.to_fs(:percentage, {:precision => 4})%></p>
+    <p>Number of years<br>
+      <%= years %></p>
+    <p>Principal<br>
+      <%= principal.to_fs(:currency) %></p>
+    <p>Payment<br>
+      <% if years == 0%>
+        $Inf
+      <% else %>
+        <%= payment.to_fs(:currency) %>
+      <% end %>
+      </p>
+    <p><a href="/payment/new">Calculate another payment</a><p>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <% min_val = params.fetch("min").to_f
+    max_val = params.fetch("max").to_f
+    random = rand(min_val..max_val) %>
+    <h1>Random Results</h1>
+    <p>Minimum<br>
+      <%= min_val%></p>
+    <p>Maximum<br>
+      <%= max_val %></p>
+    <p>Random Number<br>
+      <%= random %></p>
+      </p>
+    <p><a href="/random/new">Pick another random number</a><p>
+  </body>
+</html>

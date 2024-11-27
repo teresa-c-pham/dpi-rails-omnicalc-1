@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <% input = params.fetch("number")
+    square = input.to_f**2 %>
+    <h1>Square Results</h1>
+    <p>Number<br>
+      <%= input%></p>
+      <p>Square<br>
+      <%= square %>
+    </p>
+    <p><a href="/square/new">Calculate another square</a><p>
+  </body>
+</html>
